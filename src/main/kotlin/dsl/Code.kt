@@ -1,3 +1,7 @@
+package dsl
+
+import api.*
+
 @ContextDsl
 fun MDFile.code(builder: MDElement.() -> String) {
     elements.add(

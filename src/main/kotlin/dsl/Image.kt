@@ -1,3 +1,7 @@
+package dsl
+
+import api.*
+
 @ContextDsl
 fun MDFile.image(link: String = "", builder: MDElement.() -> String) {
     elements.add(

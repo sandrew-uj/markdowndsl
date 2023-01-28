@@ -1,7 +1,26 @@
+import dsl.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class TestMarkdown {
+
+    @Test
+    fun `Test nesting`() {
+        mdfile{
+//            mdfile{}
+//            mdfile {  }
+            code{""}
+
+            ul {
+//                h1 {""}
+//                code {""}
+//                code { "sdfsd" }
+//                tr { "sdfsf" }
+//                tr { "" }
+            }
+        }
+
+    }
 
     @Test
     fun `Test text`() {
