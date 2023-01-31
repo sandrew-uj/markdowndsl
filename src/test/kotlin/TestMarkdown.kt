@@ -6,17 +6,17 @@ class TestMarkdown {
 
     @Test
     fun `Test nesting`() {
-        mdfile{
-//            mdfile{}
-//            mdfile {  }
-            code{""}
+        mdfile {
+            table {
+                table {
 
-            ul {
-//                h1 {""}
-//                code {""}
-//                code { "sdfsd" }
-//                tr { "sdfsf" }
-//                tr { "" }
+                }
+            }
+            h2 {i{""}}
+            h1{
+                i{
+                    ""
+                }
             }
         }
 
@@ -58,19 +58,25 @@ class TestMarkdown {
         assertEquals(
             "# header1",
             mdfile {
-                h1 { "header1" }
+                h1 { t{"header1"} }
+            }.convertToText()
+        )
+        assertEquals(
+            "# *header1*",
+            mdfile {
+                h1 { i{"header1"} }
             }.convertToText()
         )
         assertEquals(
             "## header2",
             mdfile {
-                h2 { "header2" }
+                h2 { t{"header2"} }
             }.convertToText()
         )
         assertEquals(
             "### header3",
             mdfile {
-                h3 { "header3" }
+                h3 { t{"header3"} }
             }.convertToText()
         )
     }
